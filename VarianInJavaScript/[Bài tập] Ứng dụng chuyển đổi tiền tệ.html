@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        th {
+            width: 150px;
+        }
+        #in1 {
+            width: 100px;       
+        }
+    </style>
+    <table>
+        <thead>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <td><input type="number" value="0" name="am"></td>
+            <td>
+                <select id="in1" name="ct">
+                    <option value="vn">VND</option>
+                </select>
+            </td>
+            <td>
+                <select id="in1" name="ct">
+                    <option value="us">USD</option>
+                </select>
+            </td>
+            <td><input onclick="convert()" style =" color:white;background-color: purple" type="button" value="Convert"></td>
+        </tbody>
+    </table>
+    <p id = "res" style="color: blue;"></p>   
+    
+</body>
+<script>
+    function convert() {
+        let a = Number(document.getElementsByName("am")[0].value);
+        let b = a/23000;
+        document.getElementById("res").innerHTML="Result: " + b;
+    }
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaculatorDemo</title>
+</head>
+<body>
+    <input type="number" name="a1">
+    <input type="number" name="a2">
+    <br>
+    <br>
+    <input type="button" onclick="Add()" value="+">
+    <input type="button" onclick="Sub()" value="-">
+    <input type="button" onclick="Mul()" value="x">
+    <input type="button" onclick="Div()" value="/">
+    <br>
+    <br>
+    <p id="res"></p>
+</body>
+<script>
+    function Add() {
+        let a = Number(document.getElementsByName("a1")[0].value);
+        let b = Number(document.getElementsByName("a2")[0].value);
+        let c = a + b;
+        document.getElementById("res").innerHTML="Result Addition: " + c;
+    }
+    function Sub() {
+        let a = Number(document.getElementsByName("a1")[0].value);
+        let b = Number(document.getElementsByName("a2")[0].value);
+        let c = a - b;
+        document.getElementById("res").innerHTML="Result Subtraction: " + c;
+    }
+    function Mul() {
+        let a = Number(document.getElementsByName("a1")[0].value);
+        let b = Number(document.getElementsByName("a2")[0].value);
+        let c = a * b;
+        document.getElementById("res").innerHTML="Result Multiplication: " + c;
+    }
+    function Div() {
+        let a = Number(document.getElementsByName("a1")[0].value);
+        let b = Number(document.getElementsByName("a2")[0].value);
+        let c = a / b;
+        document.getElementById("res").innerHTML="Result Devidion: " + c;
+    }
+</script>
+</html>
