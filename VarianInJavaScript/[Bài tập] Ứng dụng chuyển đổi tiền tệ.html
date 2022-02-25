@@ -26,7 +26,8 @@
             <td><input type="number" value="0" name="am"></td>
             <td>
                 <select id="in1" name="ct">
-                    <option value="vn">VND</option>
+                    <option name="vn">VND</option>
+                    <!-- <option name="vn">USD</option> -->
                 </select>
             </td>
             <td>
@@ -38,13 +39,14 @@
         </tbody>
     </table>
     <p id = "res" style="color: blue;"></p>   
-    
+    <p id = "res1" style="color: blue;"></p>   
 </body>
 <script>
     function convert() {
         let a = Number(document.getElementsByName("am")[0].value);
         let b = a/23000;
         document.getElementById("res").innerHTML="Result: " + b;
+       // document.getElementById("res1").innerHTML = document.getElementsByName("vn")[1].value;
     }
 </script>
 </html>
