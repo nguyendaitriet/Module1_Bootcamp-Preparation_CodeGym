@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaculatorDemo</title>
 </head>
+
 <body>
     <input type="number" name="a1">
     <input type="number" name="a2">
     <br>
     <br>
-    <input type="button" onclick="Add()" value="+">
-    <input type="button" onclick="Sub()" value="-">
-    <input type="button" onclick="Mul()" value="x">
-    <input type="button" onclick="Div()" value="/">
+    <input type="button" onclick="Add()" value="+" name="operator">
+    <input type="button" onclick="Sub()" value="-" name="operator">
+    <input type="button" onclick="Mul()" value="x" name="operator">
+    <input type="button" onclick="Div()" value="/" name="operator">
+    <!-- <input type="button" onclick="calculate()" value="+" name="operator">
+    <input type="button" onclick="calculate()" value="-" name="operator">
+    <input type="button" onclick="calculate()" value="x" name="operator">
+    <input type="button" onclick="calculate()" value="/" name="operator"> -->
     <br>
     <br>
     <p id="res"></p>
@@ -45,4 +51,29 @@
         document.getElementById("res").innerHTML="Result Devidion: " + c;
     }
 </script>
+<!-- <script>
+    function calculate() {
+        let op = document.getElementsByName("operator")[0].value;
+        let inp1 = Number(document.getElementsByName("a1")[0].value);
+        let inp2 = Number(document.getElementsByName("a2")[0].value);
+        let result;
+        switch (op) {
+            case "+":
+                result = inp1 + inp2;
+                break;
+            case "-":
+                result = inp1 - inp2;
+                break;
+            case "x":
+                result = inp1 * inp2;
+                break;
+            case "/":
+                result = inp1 / inp2;
+                break;
+        }
+        document.getElementById("res").innerHTML="Result: " + result;
+    } -->
+
+</script>
+
 </html>
