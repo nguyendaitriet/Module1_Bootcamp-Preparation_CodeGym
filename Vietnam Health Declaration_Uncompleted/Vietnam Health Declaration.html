@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống thông tin quản lý Khai báo Y tế</title>
+    <link rel="icon" href="https://tokhaiyte.vn/upload/2001432/20210123/logoboyte_ad235.png">
+</head>
+
+<body>
+    <style>
+        #title1>p,
+        #td1 {
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        td,
+        th {
+            border: 2px solid rgb(197, 197, 197);
+            padding: 10px;
+        }
+
+        #tab2>thead>tr>th {
+            background-color: rgb(236, 236, 236);
+        }
+
+        #tab1>thead>tr>th {
+            background-color: rgb(236, 236, 236);
+        }
+
+        #tab1>thead>tr>th:nth-child(3n+1) {
+            width: 35%;
+        }
+
+        #tab1,
+        #tab2>tbody>tr {
+            text-align: center;
+        }
+
+        #tab1,
+        #tab2>tbody>tr>td:nth-child(3n+1) {
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .input1 {
+            float: left;
+            width: 50%;
+        }
+
+        .input2 {
+            float: right;
+            width: 50%;
+        }
+
+        .input3 {
+            float: left;
+            width: 32%;
+        }
+
+        .box1 {
+            border-radius: 5px;
+            width: 95%;
+            height: 35px;
+        }
+
+        .box2 {
+            border-radius: 5px;
+            width: 97%;
+            height: 35px;
+        }
+
+        .box3 {
+            border-radius: 5px;
+            width: 30%;
+            height: 35px;
+        }
+
+        pre,
+        #tick {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+    </style>
+    <p>Chọn ngôn ngữ để khai báo y tế /Select the language to declare health:</p>
+    <div>
+        <img src="https://tokhaiyte.vn/App/images/Language/vi-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/en-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/china-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/ko-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/it-big.jpg" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/cam-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/ru-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/es-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/fr-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/App/images/Language/lo-big.png" alt="No image" />
+        <img src="https://tokhaiyte.vn/upload/2001432/20200311/jp-big_63de0.png" alt="No image" />
+    </div>
+    <div id="title1">
+        <p>TỜ KHAI Y TẾ ĐỐI VỚI NGƯỜI NHẬP CẢNH</p>
+        <p>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG
+            DỊCH BỆNH TRUYỀN NHIỄM</p>
+        <p style="color:red">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự
+        </p>
+    </div>
+    <form action="#" method="post">
+        <div class="row">
+            <div class="input1">
+                <pre>Đối tượng <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="cg">Chuyên gia</option>
+                    <option value="nvn">Người Việt Nam</option>
+                    <option value="hs">Học sinh/Sinh viên quốc tế</option>
+                    <option value="kh">Khác</option>
+                </select>
+            </div>
+            <div class="input2">
+                <pre>Cửa khẩu <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="ap">A Pa Chải</option>
+                    <option value="ad">A Đớt</option>
+                    <option value="lb">Lao Bảo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <pre>Họ tên (ghi chữ IN HOA) <em style="color:red">(*)</em></pre>
+            <input type="text" class="box2">
+        </div>
+        <div class="row">
+            <div class="input1">
+                <pre>Ngày tháng năm sinh <em style="color:red">(*)</em></pre>
+                <select class="box3">
+                    <option value="a">Ngày</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Tháng</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Năm</option>
+                    <option value="b">1990</option>
+                    <option value="c">1991</option>
+                    <option value="d">1992</option>
+                </select>
+            </div>
+            <div class="input1">
+                <div class="input1">
+                    <pre>Giới tính<em style="color:red">(*)</em></pre>
+                    <select class="box1">
+                        <option value="a">-Chọn-</option>
+                        <option value="b">Nam</option>
+                        <option value="c">Nữ</option>
+                        <option value="d">Khác</option>
+                    </select>
+                </div>
+                <div class="input2">
+                    <pre>Quốc tịch<em style="color:red">(*)</em></pre>
+                    <select class="box1">
+                        <option value="a">Việt Nam</option>
+                        <option value="b">Lào</option>
+                        <option value="c">Thái Lan</option>
+                        <option value="d">Hoa Kì</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <pre>Thông tin đi lại <em style="color:red">(*)</em></pre>
+            <input type="radio" name="ttdl" id="tick" checked>Tàu bay
+            <input type="radio" name="ttdl" id="tick">Tàu tàu thuyền
+            <input type="radio" name="ttdl" id="tick">Ô tô
+            <input type="radio" name="ttdl" id="tick">Khác
+        </div>
+        <div class="row">
+            <div class="input1">
+                <pre>Số hiệu phương tiện <em style="color:red">(*)</em></pre>
+                <input type="text" class="box2" placeholder="VD: VN123">
+                <pre>Ngày khởi hành <em style="color:red">(*)</em></pre>
+                <select class="box3">
+                    <option value="a">Ngày</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Tháng</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Năm</option>
+                    <option value="b">1990</option>
+                    <option value="c">1991</option>
+                    <option value="d">1992</option>
+                </select>
+            </div>
+            <div class="input2">
+                <pre>Số ghế </pre>
+                <input type="text" class="box2">
+                <pre>Ngày nhập cảnh <em style="color:red">(*)</em></pre>
+                <select class="box3">
+                    <option value="a">Ngày</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Tháng</option>
+                    <option value="b">1</option>
+                    <option value="c">2</option>
+                    <option value="d">3</option>
+                </select>
+                <select class="box3">
+                    <option value="a">Năm</option>
+                    <option value="b">1990</option>
+                    <option value="c">1991</option>
+                    <option value="d">1992</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <p id="td1" style="text-align:left">Địa điểm khởi hành (tỉnh/quốc gia)</p>
+            <div class="input1">
+                <pre>Quốc gia/ Vùng lãnh thổ <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Việt Nam</option>
+                    <option value="b">Lào</option>
+                    <option value="c">Campuchia</option>
+                </select>
+            </div>
+            <div class="input2">
+                <pre>Tỉnh <em style="color:red">(*)</em></pre>
+                <input type="text" class="box2">
+            </div>
+        </div>
+
+        <div class="row">
+            <p id="td1" style="text-align:left">Địa điểm nơi đến (tỉnh/quốc gia)</p>
+            <div class="input1">
+                <pre>Quốc gia/ Vùng lãnh thổ <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Việt Nam</option>
+                    <option value="b">Lào</option>
+                    <option value="c">Campuchia</option>
+                </select>
+            </div>
+            <div class="input2">
+                <pre>Tỉnh <em style="color:red">(*)</em></pre>
+                <input type="text" class="box2">
+            </div>
+        </div>
+
+        <div class="row">
+            <pre>Trong vòng 14 ngày qua, Anh/Chị có đến quốc gia/vùng lãnh thổ nào? <em style="color:red">(*)</em></pre>
+            <input type="text" class="box2">
+        </div>
+        <div class="row">
+            <p id="td1" style="text-align:left">Nơi lưu trú sau cách ly tập trung</p>
+            <div class="input3">
+                <pre>Tỉnh / thành <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Hà Nội</option>
+                    <option value="b">Thừa Thiên Huế</option>
+                    <option value="c">Khánh Hòa</option>
+                </select>
+            </div>
+            <div class="input3">
+                <pre>Quận / huyện <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Hai Bà Trưng</option>
+                    <option value="b">Hoàn Kiếm</option>
+                    <option value="c">Mỹ Khê</option>
+                </select>
+            </div>
+            <div class="input3">
+                <pre>Phường / xã <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Thuận Hòa</option>
+                    <option value="b">Hương Sơ</option>
+                    <option value="c">Phú Nhuận</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <pre>Địa chỉ lưu trú sau cách ly <em style="color:red">(*)</em></pre>
+            <input type="text" class="box2">
+        </div>
+
+        <div class="row">
+            <p id="td1" style="text-align:left">Địa chỉ liên lạc tại Việt Nam</p>
+            <div class="input3">
+                <pre>Tỉnh / thành <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Hà Nội</option>
+                    <option value="b">Thừa Thiên Huế</option>
+                    <option value="c">Khánh Hòa</option>
+                </select>
+            </div>
+            <div class="input3">
+                <pre>Quận / huyện <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Hai Bà Trưng</option>
+                    <option value="b">Hoàn Kiếm</option>
+                    <option value="c">Mỹ Khê</option>
+                </select>
+            </div>
+            <div class="input3">
+                <pre>Phường / xã <em style="color:red">(*)</em></pre>
+                <select class="box1">
+                    <option value="chon">-Chọn-</option>
+                    <option value="a">Thuận Hòa</option>
+                    <option value="b">Hương Sơ</option>
+                    <option value="c">Phú Nhuận</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <pre>Địa chỉ nơi ở tại Việt Nam <em style="color:red">(*)</em></pre>
+            <input type="text" class="box2">
+        </div>
+
+        <div class="row">
+            <p id="td1" style="text-align:left;font-size:small"><em>Số điện thoại bạn sẽ sử dụng tại Việt Nam (Là số
+                    Roaming hoặc số Việt Nam)</em></p>
+            <div class="input1">
+                <pre>Điện thoại <em style="color:red">(*)</em></pre>
+                <input type="text" class="box2">
+            </div>
+            <div class="input2">
+                <pre>Email <em style="color:red">(*)</em></pre>
+                <input type="text" class="box2">
+            </div>
+        </div>
+
+        <div class="row">
+            <strong>
+                <pre>Trong vòng 14 ngày (tính đến thời điểm làm thủ tục xuất cảnh, nhập cảnh, quá cảnh) Anh/Chị có thấy xuất hiện dấu hiệu nào sau đây không? <em style="color:red">(*)</em></pre>
+            </strong>
+
+            <table id="tab1">
+                <thead>
+                    <tr>
+                        <th>Triệu chứng</th>
+                        <th>Có</th>
+                        <th>Không</th>
+                        <th>Triệu chứng</th>
+                        <th>Có</th>
+                        <th>Không</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <pre>Sốt <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="sot"></td>
+                        <td><input type="radio" name="sot"></td>
+                        <td>
+                            <pre>Nôn/Buồn nôn <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="non"></td>
+                        <td><input type="radio" name="non"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>Ho <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="ho"></td>
+                        <td><input type="radio" name="ho"></td>
+                        <td>
+                            <pre>Tiêu chảy <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="tie"></td>
+                        <td><input type="radio" name="tie"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>Khó thở <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="kho"></td>
+                        <td><input type="radio" name="kho"></td>
+                        <td>
+                            <pre>Xuất huyết ngoài da <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="xu"></td>
+                        <td><input type="radio" name="xu"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>Đau họng <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="hong"></td>
+                        <td><input type="radio" name="hong"></td>
+                        <td>
+                            <pre>Nổi ban ngoài da <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="ban"></td>
+                        <td><input type="radio" name="ban"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <strong>
+                <pre>Lịch sử phơi nhiễm: Trong vòng 14 ngày qua, Anh/Chị có <em style="color:red">(*)</em></pre>
+            </strong>
+
+            <table id="tab2">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Có</th>
+                        <th>Không</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <pre>Đến trang trại chăn nuôi / chợ buôn bán động vật sống / cơ sở giết mổ động vật / tiếp xúc động vật <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="tra"></td>
+                        <td><input type="radio" name="tra"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>Tiếp xúc gần (&#60;2m) với người mắc bệnh viêm đường hô hấp do nCoV <em style="color:red">(*)</em></pre>
+                        </td>
+                        <td><input type="radio" name="tx"></td>
+                        <td><input type="radio" name="tx"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <strong><pre>Chọn cơ sở cách ly <em style="color:red">(*)</em></pre></strong>
+            <input type="radio" name="ttdl" id="cscl" >Cơ sở cách ly tập trung<br> <br> 
+            <input type="radio" name="ttdl" id="cscl">Cơ sở cách ly tự chọn<br> <br> 
+            <input type="radio" name="ttdl" id="cscl">Khác
+        </div>
+
+    </form>
+</body>
+
+</html>
