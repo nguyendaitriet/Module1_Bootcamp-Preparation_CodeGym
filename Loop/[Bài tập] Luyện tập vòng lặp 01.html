@@ -1,32 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button onclick="bai1()">Bài 1</button>
     <button onclick="bai2()">Bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+    <button onclick="bai4()">Bài 4</button>
+    <button onclick="bai5()">Bài 5</button>
+    <button onclick="bai6()">Bài 6</button>
+    <button onclick="bai7()">Bài 7</button>
+    <p>Bài 8</p>
+    <button onclick="bai8()">Play</button>
     <script>
+
         function bai1() {
-            let i=1;
-            for (i = 1; i < 99; i++) {}
+            let i = 1;
+            for (i = 1; i < 99; i++) { }
             if (i == 99) {
-                alert( 99 + " Completed");
+                alert(99 + " Completed");
             }
         }
+
         function bai2() {
-            let temp=Number(prompt("Enter the temperature: "));
+            let temp = Number(prompt("Enter the temperature: "));
             while (temp > 100 || temp < 20) {
-                if (temp >100) {
-                    temp=Number(prompt("Enter lower temperature"));
+                if (temp > 100) {
+                    temp = Number(prompt("Enter lower temperature"));
                 } else {
-                    temp=Number(prompt("Enter higher temperature"));
+                    temp = Number(prompt("Enter higher temperature"));
                 }
+            }
+        }
+
+        function bai3() {
+            let num = Number(prompt("Nhập vào số lượng số Fibonacci cần hiển thị: "));
+            let res = "1";
+            let fib = 0;
+            let x1 = 0;
+            let x2 = 1;
+            for (let i = 1; i <= num; i++) {
+                fib = x1 + x2;
+                res += " " + fib;
+                x1 = x2;
+                x2 = fib;
+            }
+            alert(`Dãy số Fibonacci: ${res}`);
+        }
+
+        function bai4() {
+            let fib = 1;
+            let x1 = 0;
+            let x2 = 1;
+            while (fib % 5 != 0) {
+                fib = x1 + x2;
+                x1 = x2;
+                x2 = fib;
+            }
+            alert(`Số Fibonacci đầu tiên chia hết cho 5 là: ${fib}`);
+        }
+
+        function bai5() {
+            let num = Number(prompt("Nhập vào số lượng số Fibonacci cần tính tổng: "));
+            let sum = 0;
+            let fib = 0;
+            let x1 = 0;
+            let x2 = 1;
+            for (let i = 1; i <= num; i++) {
+                fib = x1 + x2;
+                sum += fib;
+                x1 = x2;
+                x2 = fib;
+            }
+            alert(`Tổng của ${num} số Fibonacci đầu tiên là: ${sum}`);
+        }
+
+        function bai6() {
+            let sum = 0;
+            let i = 0;
+            while (i <= 30) {
+                if (i % 7 == 0) {
+                    sum += i;
+                }
+                i++;
+            }
+            alert(`Tổng 30 số tự nhiên đầu tiên chia hết cho 7 là: ${sum}`);
+        }
+
+        function bai7() {
+            let res = "";
+            let i = 1;
+            while (i <= 100) {
+                if (i % 3 == 0) {
+                    if (i % 5 == 0) {
+                        res += " " + "FizzBuzz";
+                    } else res += " " + "Fizz";
+                } else if (i % 5 == 0) {
+                    res += " " + "Buzz";
+                } else res += " " + i;
+                i++;
+            }
+            alert(`Dãy cần hiển thị là: ${res}`);
+        }
+
+        function bai8() {
+            let min = Number(prompt("Enter a range, form "));
+            let max = Number(prompt("to "));
+            let num = Number(prompt("Choose a number in your entered range: "));
+            function randomNumber() {
+                const r = Math.random() * (max - min) + min;
+                return Math.ceil(r);
+            }
+            let i = 0;
+            while (i < 3) {
+                if (num == randomNumber()) {
+                    alert("Congratulations!");
+                    break;
+                } else if (num > randomNumber()) {
+                    num = Number(prompt("Your number is greater, enter again: "));
+                } else {
+                    num = Number(prompt("Your number is less, enter again: "));
+                }
+            i++;
             }
         }
     </script>
 </body>
+
 </html>
