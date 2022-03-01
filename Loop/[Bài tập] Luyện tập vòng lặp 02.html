@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="bai1()">Bài 1 - Done</button>
+    <button onclick="bai2()">Bài 2 </button>
+    <button onclick="bai3()">Bài 3 - Not done</button>
+    <button onclick="bai4()">Bài 4</button>
+    <button onclick="bai5()">Bài 5</button>
+    <button onclick="bai6()">Bài 6 - Not done</button>
+    <p>Exercise 4 result:</p>
+    <p id="res4"></p>
+    <p>Exercise 5 result:</p> 
+    <p id="res5"></p>
+</body>
+<script>
+    function bai2() {
+        let num = Number(prompt("Enter a number: "));
+        let mul = 1;
+        for (let i = 1; i <= num; i++) {
+            mul *= i;
+        }
+        alert(`${num}! = ${mul}`);
+    }
+
+    function bai4() {
+        let len = Number(prompt("Enter length: "));
+        let wid = Number(prompt("Enter width: "));
+        let res = "";
+        let len1 = "";
+        for (let i1 = 1; i1 <= len; i1++) {
+            len1 += "*";
+        }
+        res += len1 + "<br>";
+        let i2 = 1;
+
+        while (i2 <= wid-2) {
+            let i3 = 1; let len2 = "*";
+            while (i3 <= len-2) {
+                len2 += "&nbsp" + "&nbsp";
+                i3++;
+            }
+            len2 += "*";
+            res += len2 + "<br>";
+            i2++;
+        }
+        res += len1;
+        document.querySelector("#res4").innerHTML=res;
+    }
+
+    function bai5() {
+        let tienVay = Number(prompt("Nhập số tiền vay: "));
+        let thangVay = Number(prompt("Nhập số tháng vay: "));
+        let laiThang = Number(prompt("Nhập lãi mỗi tháng: "));
+        let tienGocThang = tienVay/12;
+
+        let res1 = "";
+
+        for (let i5 = 0; i5 < thangVay; i5++) {
+            let laiTra = 0;
+            laiTra = (tienVay - tienGocThang*i5)*laiThang/100/thangVay;
+            res1 += `Tiền lãi tháng ${i5+1} là: ${laiTra}` + "<br>";
+        }
+        document.querySelector("#res5").innerHTML=res1;
+    }
+</script>
+
+</html>
