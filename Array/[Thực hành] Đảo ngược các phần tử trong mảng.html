@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <p id="input"></p>
+    <p id="res"></p>
+<body>
+    <script>
+        alert("Nhập vào các phần tử của 1 mảng (Nhập '/' để kết thúc)");
+        let num = prompt();
+        let array = Array();
+        while (num != "/") {
+            num = prompt();
+            array.push(num);
+        }
+        array.pop();
+        document.querySelector("#input").innerHTML = array;
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let store = array[first];
+            array[first] = array[last];
+            array[last] = store;
+            first ++;
+            last --;
+        }
+        document.querySelector("#res").innerHTML = array;
+     
+    </script>
+</body>
+
+</html>
