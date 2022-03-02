@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +10,7 @@
     <p id="input"></p>
     <p id="res"></p>
     <script>
-        alert("Nhập vào các phần tử của 1 mảng (Nhập '/' để kết thúc)");
+        alert("Enter numbers of an array (Enter '/' to exit).");
         let num = prompt();
         let array = Array();
         while (num != "/") {
@@ -19,18 +18,16 @@
             array.push(num);
         }
         array.pop();
-        document.querySelector("#input").innerHTML = array;
-        let first = 0;
-        let last = array.length - 1;
-        while (first < last) {
-            let store = array[first];
-            array[first] = array[last];
-            array[last] = store;
-            first ++;
-            last --;
+        document.querySelector("#input").innerHTML = `Your array: ${array}`;
+        let max = Number(array[0]);
+        let index = 0;
+        for (let i = 1; i < array.length; i++) {
+            if (Number(array[i]) > max) {
+                max = Number(array[i]);
+                index = i;
+            }
         }
-        document.querySelector("#res").innerHTML = array;
+        document.querySelector("#res").innerHTML = `Max number in your entered array is ${max}, at position ${index}.`;
     </script>
 </body>
-
 </html>
