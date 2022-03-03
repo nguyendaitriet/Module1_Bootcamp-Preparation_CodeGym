@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <input style="width: 250px; height:30px" type="text" id="word" placeholder="-Enter a word you want to look up-" />
+    <button onclick="lookUp()">Search</button>
+</body>
+<script>
+    function lookUp() {
+        let english = ['have', 'go', 'swim', 'climb', 'fly', 'bite', 'run', 'sleep', 'smile'];
+        let vietnamese = ['có', 'đi', 'bơi', 'leo trèo', 'bay', 'cắn', 'chạy', 'ngủ', 'cười'];
+        let input = document.querySelector("#word").value;
+        let i = 0;
+        for (; i < english.length; i++) {
+            if (input == english[i]) {
+                alert(vietnamese[i]);
+                break;
+            }
+        }
+        if (i == english.length) {
+            alert("No word found!");
+        }
+    }
+</script>
+
+</html>
