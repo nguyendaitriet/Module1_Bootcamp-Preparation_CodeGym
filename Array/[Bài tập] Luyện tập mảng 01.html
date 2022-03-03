@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="bai1()">Bài 1</button>
+    <button onclick="bai2()">Bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+    <button onclick="bai4()">Bài 4</button>
+    <button onclick="bai5()">Bài 5</button>
+    <button onclick="bai6()">Bài 6</button>
+    <button onclick="bai7()">Bài 7</button>
+    <button onclick="bai8()">Bài 8</button>
+    <button onclick="bai9()">Bài 9</button>
+</body>
+<script>
+
+    function bai1() {
+        alert("Enter 10 numbers: ");
+        let num;
+        let arr = [];
+        let i = 0;
+        let count = 0;
+        do {
+            num = Number(prompt());
+            arr[i] = num;
+            i++;
+        } while (i < 10);
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] >= 10) {
+                count++;
+            }
+        }
+        alert(`There is/are ${count} number(s) equal or greater than 10 in your entered numbers.`);
+    }
+
+    function bai2() {
+        alert("Enter 10 numbers: ");
+        let num;
+        let arr = [];
+        let i = 0;
+        do {
+            num = Number(prompt());
+            arr[i] = num;
+            i++;
+        } while (i < 10);
+        let max = arr[0];
+        let index = 0;
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+                index = j;
+            }
+        }
+        alert(`Your array: "${arr}"". The max number is ${max} at position ${index}.`);
+    }
+
+    function bai3() {
+        alert("Enter some numbers (type 'exit' to exit): ");
+        let num;
+        let arr = [];
+        let sum = 0;
+        let j = 0;
+        do {
+            num = prompt();
+            arr[j] = num;
+            j++;
+        } while (num !== "exit");
+        arr.pop();
+        let max = Number(arr[0]);
+        for (let i = 0; i < arr.length; i++) {
+            if (Number(arr[i]) > max) {
+                max = Number(arr[i]);
+            }
+            sum += Number(arr[i]);
+        }
+        alert(`Your array: "${arr}". The max number is ${max} and the average of all numbers is ${sum / 3}.`);
+    }
+
+    function bai4() {
+        alert("Enter some numbers or words (type 'exit' to exit): ");
+        let num;
+        let arr = [];
+        let j = 0;
+        do {
+            num = prompt();
+            arr[j] = num;
+            j++;
+        } while (num !== "exit");
+        arr.pop();
+        alert(`Your array: "${arr}".`);
+        let last = arr.length - 1;
+        let first = 0;
+        let hold;
+        while (first < last) {
+            hold = arr[first];
+            arr[first] = arr[last];
+            arr[last] = hold;
+            first++;
+            last--;
+        }
+        alert(`Your new array: "${arr}".`);
+    }
+
+    function bai5() {
+        alert("Enter a string like this '1,4,-10,3,-4': ");
+        let str = prompt();
+        let arr = str.split(",");
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (Number(arr[i]) < 0) {
+                sum++;
+            }
+        }
+        alert(`There is/are ${sum} negative number(s) in your entered string.`);
+    }
+
+    function bai6() {
+        alert("Enter some numbers with comma like this 1,-4,...: ");
+        let str = prompt();
+        let arr = str.split(",");
+        let num = prompt("Enter a random number: ");
+        let i = 0;
+        for (; i < arr.length; i++) {
+            if (num == arr[i]) {
+                alert(`${num} exists in your array.`);
+                break;
+            }
+        }
+        if (i==arr.length) {
+            alert(`${num} doesn't exist in your array.`);
+        }
+    }
+
+    function bai7() {
+        alert("Enter an string like this 1,-4,...: ");
+        let str = prompt();
+        let arr = str.split(",");
+        let del = prompt("Enter the element you want to remove from your string: ");
+        for(let i =0; i< arr.length;i++) {
+            if (del==arr[i]) {
+                arr.splice(i,1);
+                arr.push(0);
+            }
+        }
+        alert(`Result: ${arr}`);
+    }
+
+    function bai8 (){
+        alert("Enter 10 numbers: ");
+        let num;
+        let arr1 = [];
+        let i = 0;
+        do {
+            num = Number(prompt());
+            arr1[i] = num;
+            i++;
+        } while (i < 10);
+        alert(`Your entered array: ${arr1}.`);
+        arr1.sort(function(a, b){return b - a});
+        alert(`Result after sorting: ${arr1}`);
+    }
+
+    function bai9 (){
+        alert("Enter array A like this '1,4,q,as,2,...': ");
+        let str1 = prompt();
+        let arr1 = str1.split(",");
+        alert("Enter array B like this '1,4,q,as,2,...': ");
+        let str2 = prompt();
+        let arr2 = str2.split(",");
+        alert(`Array C is : ${arr1.concat(arr2)}`); 
+    }
+</script>
+
+</html>

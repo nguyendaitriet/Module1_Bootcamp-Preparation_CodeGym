@@ -10,7 +10,6 @@
 <button onclick="bai1()">Bài 1</button>
 <button onclick="bai2()">Bài 2</button>
 <button onclick="bai3()">Bài 3</button>
-
 <body>
     <script>
         function bai1() {
@@ -26,8 +25,8 @@
         }
 
         function bai2() {
-            let input = prompt("Enter a specific number: ");
-            const str = input.toString();
+            let str = prompt("Enter a specific number: ");
+   
             const result = [str[0]];
             for (let x = 1; x < str.length; x++) {
                 if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
@@ -39,7 +38,7 @@
             }
             alert(`Result: ${result.join("")}`);
         }
-        
+
         function bai3 () {
             let input = prompt("Enter a string: ");
             let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
