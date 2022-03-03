@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="bai1()">Bài 1</button>
+<button onclick="bai2()">Bài 2</button>
+<button onclick="bai3()">Bài 3</button>
+
+<body>
+    <script>
+        function bai1() {
+            let arr = Array();
+            let input;
+            alert("Enter some color (enter 'exit' to exit):");
+            do {
+                input = prompt();
+                arr.push(input);
+            } while (input != "exit");
+            arr.pop();
+            alert(`Your color list is: "${arr.join(",")}"`);
+        }
+
+        function bai2() {
+            let input = prompt("Enter a specific number: ");
+            const str = input.toString();
+            const result = [str[0]];
+            for (let x = 1; x < str.length; x++) {
+                if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+                    result.push('-', str[x]);
+                }
+                else {
+                    result.push(str[x]);
+                }
+            }
+            alert(`Result: ${result.join("")}`);
+        }
+        
+        function bai3 () {
+            let input = prompt("Enter a string: ");
+            let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            let result = [];
+            for (let x=0;x<input.length;x++){
+                if (UPPER.indexOf(input[x]) !== -1) {
+                    result.push(input[x].toLowerCase());
+                } else if (LOWER.indexOf(input[x]) !== -1) {
+                    result.push(input[x].toUpperCase());
+                } else {
+                    result.push(input[x]);
+                }
+            }
+            alert(`Result: ${result.join("")}`);
+        }
+    </script>
+</body>
+
+</html>
