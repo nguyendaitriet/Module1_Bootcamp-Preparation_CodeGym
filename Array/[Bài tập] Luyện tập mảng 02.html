@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="bai1()">Bài 1</button>
+    <button onclick="bai2()">Bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+    <button onclick="bai4()">Bài 4</button>
+    <button onclick="bai5()">Bài 5</button>
+    <button onclick="bai6()">Bài 6</button>
+    <p>Kết quả bài 1</p>
+    <p id="res1"></p>
+</body>
+<script>
+    function bai1() {
+        let arr = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        let res1 = "";
+        for (let i = 0; i < arr.length; i++) {
+            res1 += `"row ${i}" <br>`;
+            for (let j = 0; j < arr[i].length; j++) {
+                res1 += `"${arr[i][j]}" <br>`;
+            }
+        }
+        document.querySelector("#res1").innerHTML = res1;
+    }
+    function bai2() {
+        let str = prompt('Nhập vào 1 mảng với các kí tự ngăn cách bằng dấu phấy như sau 4,5,s,v,...:');
+        let arr = str.split(",");
+        let last = arr.length - 1;
+        let first = 0;
+        let hold;
+        while (first < last) {
+            hold = arr[first];
+            arr[first] = arr[last];
+            arr[last] = hold;
+            first++;
+            last--;
+        }
+        alert(`Mảng sau khi đảo ngược: ${arr}`);
+    }
+
+    function bai3() {
+        let str = prompt('Nhập vào 1 mảng với các kí tự ngăn cách bằng dấu phấy như sau 4,5,s,v,...:');
+        let arr = str.split(",");
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (Number.isInteger(Number(arr[i]))) {
+                count++;
+            }
+        }
+        alert(`Số kí tự số có trong mảng là: ${count}.`)
+    }
+
+    function bai4() {
+        let str = prompt('Nhập vào 1 câu (kết thúc câu bằng dấu .): ');
+        let arr = str.split(" ");
+        alert(`Số từ có trong câu là " ${arr.length}`);
+    }
+    function bai5() {
+        let str1 = prompt("Nhập chuỗi 1: ");
+        let arr1 = str1.split("");
+        let str2 = prompt("Nhập chuỗi 2: ");
+        let arr2 = str2.split("");
+        if (arr1.length == arr2.length) {
+            let i = 0;
+            for (; i< arr1.length; i ++) {
+                if (arr1[i] != arr2[i]) {
+                    alert(`2 chuỗi không giống nhau`);
+                    break;
+                }
+            }
+            if (i == arr1.length) {
+                alert(`2 chuỗi giống nhau`);
+            }
+        } else {
+            alert(`2 chuỗi không giống nhau`);
+        }
+    }
+      function bai6() {
+        let str = prompt("Nhập vào 1 chuỗi kí tự");
+        let arr = str.split("");
+        for (let i= 0; i< arr.length;i++) {
+            if (arr[i] == "-") {
+                arr[i]="_";
+            }
+        }
+        alert(`Kết quả: ${arr.join("")}`)
+      }
+</script>
+
+</html>
