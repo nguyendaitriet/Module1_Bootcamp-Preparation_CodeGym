@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<style>
+    #input {
+        width: fit-content;
+        height: 30px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <input type="text" id="input" placeholder="-Enter a string-">
+    <button onclick="isPalindrome()">Check</button>
+    <p id="res"></p>
+    <script>
+        function isPalindrome() {
+            let str = document.querySelector("#input").value;
+            let arr = str.split("");
+            let i = 0;
+            let check = 0;
+            for (; i <= arr.length/2; i++) {
+                if (arr[i] != arr[arr.length - 1 - i]) {
+                    document.querySelector("#res").innerHTML = `"${str}" is not a palindrome`;
+                    check++;
+                    break;
+                }
+            }
+            if (check == 0) {
+                document.querySelector("#res").innerHTML = `"${str}" is a palindrome`;
+            }
+        }
+    </script>
+</body>
+
+</html>
