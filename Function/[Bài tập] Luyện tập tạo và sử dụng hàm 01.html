@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="alertMessage()">Bài 1</button>
+    <button onclick="increment()">Bài 2</button>
+    <button onclick="comparation()">Bài 3</button>
+    <button onclick="addNumbers()">Bài 4</button>
+    <button onclick="findStar()">Bài 5</button>
+
+</body>
+<script>
+    function alertMessage() {
+        alert('Xin chao');
+    }
+    function increment() {
+        let num = Number(prompt("Enter a number:"));
+        return alert(`Result: ${num + 1}`);
+    }
+    function comparation() {
+        alert("Enter two numbers.");
+        let num1 = Number(prompt());
+        let num2 = Number(prompt());
+        if (num1 > num2) {
+            alert(`First number is greater than second number`);
+        } else alert(`sum of two numbers is ${num1 + num2}`);
+    }
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return alert(result);
+    }
+    result = 0;
+    alert(result);
+
+    function findStar() {
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let arr2 = ["Ursa Minor", 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        // let star=prompt('Enter the name of a Star: ');
+        // let i =0;
+        // for ( ;i< arr1.length; i++) {
+        //     if (arr1[i] == star) {
+        //         alert(`${arr1[i]} is a star of ${arr2[i]}.`);
+        //         break;
+        //     }
+        // }
+        // if (i == arr1.length) {
+        //     alert(`No Star found. Please enter again!`);
+        // }
+        let check = 0;
+        do {
+            let star = prompt('Enter the name of a Star:');
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] == star) {
+                    alert(`${arr1[i]} is a star of ${arr2[i]}.`);
+                    check = 1;
+                    break;
+                }
+            }
+            if (check == 0) {
+                alert(`No Star found. Please enter again!`);
+            }
+        } while (check == 0);
+    }
+</script>
+
+</html>
