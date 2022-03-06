@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="-Type some numbers like this 2,4,1,16,-3,..." oninput="minNuber()">
+    <!-- <button onclick="minNuber()">Process</button> -->
+    <pre>Min number is: <span id="res"></span></pre>
+    <script>
+        function minNuber() {
+            let inp = document.querySelector("#input").value;
+            let arr = inp.split(",");
+            let min = Number(arr[0]);
+            for (let i=1; i< arr.length; i++) {
+                if (Number(arr[i])<min) {
+                    min=Number(arr[i]);
+                }
+            }
+            document.querySelector("#res").innerHTML=min;
+        }
+    </script>
+</body>
+</html>
