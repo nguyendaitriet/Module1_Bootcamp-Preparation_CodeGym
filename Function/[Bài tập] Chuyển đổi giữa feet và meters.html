@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="input">
+    <select id="sel1">
+        <option value="a">feet</option>
+        <option value="b">meter</option>
+    </select>
+    <br>
+    <br>
+    <input type="text" id="output">
+      <select id="sel2">
+        <option value="a">feet</option>
+        <option value="b">meter</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <script>
+          function footToMeter(foot) {
+            return 0.305 * foot;
+        }
+        function meterToFoot(meter) {
+            return 3.279 * meter;
+        }
+        function convert() {
+            let value1 = document.querySelector("#sel1").value;
+            let value2 = document.querySelector("#sel2").value;
+            let input = Number(document.querySelector("#input").value);
+            if (value1 == value2) {
+                document.querySelector("#output").value = `Choose different unit`;
+            } else if (value1 == "a" && value2 == "b") {
+                document.querySelector("#output").value = footToMeter(input);
+            } else {
+                document.querySelector("#output").value = meterToFoot(input);
+            }
+        }
+    </script>
+</body>
+
+</html>
