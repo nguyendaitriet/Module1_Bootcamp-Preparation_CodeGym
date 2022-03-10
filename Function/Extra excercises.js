@@ -27,7 +27,7 @@ function checkPrimeNumberInArray(arr) {
 function calculateSumAll(arr) {
     let sum = 0;
     for (let value of arr) {
-        sum+=value;
+        sum += value;
     }
     return sum;
 }
@@ -36,10 +36,17 @@ function calculateSumAll(arr) {
 function countEvenNumber(arr) {
     let count = 0;
     for (let number of arr) {
-        if (number%2 == 0) {
+        if (number % 2 == 0) {
             count++;
         }
     }
     return count;
 }
 // console.log(countEvenNumber([2,44,10,5,17,19,6,-15]));
+ (function getResult(){
+     let newArray = createArray(20,1,100);
+     console.log(`Mảng vừa tạo là: [${newArray}]`);
+     console.log(`${checkPrimeNumberInArray(newArray) ? 'Có' : 'Không có'} số nguyên tố trong mảng.`);
+     console.log(`Tổng tất cả các giá trị trong mảng: ${calculateSumAll(newArray)}`);
+     console.log(`Có ${countEvenNumber(newArray)} số chẵn trong mảng.`);
+ })()
