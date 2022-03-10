@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Temperature = function (celsius) {
+            this.celsius = celsius;
+            this.intoFahrenheit = function () {
+                return 1.8 * this.celsius + 32;
+            }
+            this.intoKenvin = function () {
+                return 273.15 + this.celsius;
+            }
+        }
+        let temp = Temperature(25);
+        alert(intoFahrenheit(temp));
+        alert(intoKenvin(temp));
+    </script>
+</body>
+
+</html>
