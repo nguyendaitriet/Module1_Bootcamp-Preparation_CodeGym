@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        let Rectangle = function(width,height) {
+        let Rectangle = function (width, height) {
             this.width = width;
             this.height = height;
-            this.perimeter = function() {
-                return 2*(this.height+this.width);
+            this.perimeter = function () {
+                return 2 * (this.height + this.width);
             }
-            this.area = function() {
-                return this.height*this.width;
+            this.area = function () {
+                return this.height * this.width;
             }
-            this.drawCanvas = function(width,height) {
-                
+            this.drawCanvas = function (width, height) {
+
+            }
+        }
+
+        function generateArray(length) {
+            for (let i = 0; i < 10; i++) {
+                arr[i] = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
             }
         }
     </script>
 </body>
+
 </html>
