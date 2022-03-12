@@ -29,7 +29,7 @@
         }
 
         function createCircle() {
-            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let ctx = document.querySelector("#myCanvas").getContext("2d");
             let radius = Math.floor(Math.random() * 80);
             let color = getRandomColor();
             let x = Math.random() * window.innerWidth;

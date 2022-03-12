@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<canvas id="drawRectangle" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <body>
     <script>
         let Rectangle = function (width, height) {
@@ -19,16 +19,15 @@
             this.area = function () {
                 return this.height * this.width;
             }
-            this.drawCanvas = function (width, height) {
-
+            this.drawCanvas = function () {
+                let rectangle = document.querySelector("#drawRectangle").getContext("2d");
+                rectangle.beginPath();
+                rectangle.rec(50, 50, this.width, this.height);
+                rectangle.stroke();
             }
         }
-
-        function generateArray(length) {
-            for (let i = 0; i < 10; i++) {
-                arr[i] = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
-            }
-        }
+        let rec = new Rectangle(50,20);
+        rec.drawCanvas();
     </script>
 </body>
 
