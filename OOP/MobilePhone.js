@@ -1,17 +1,19 @@
 class Mobilephone {
+
     useBattery(battery) {
         return this.battery = battery;
     }
     useMemory(memory) {
         return this.memory = memory;
     }
+
     showEnergy() {
         return this.battery.getEnergy();
     }
     receivedMessage(msg) {
         this.memory.saveInboxMessage(msg);
     }
-    composeMessage(msg, otherphone) {
+    composeMessage(msg,otherphone) {
         this.memory.saveSentMessage(msg);
         otherphone.receivedMessage(msg);
     }
@@ -20,6 +22,11 @@ class Mobilephone {
     }
     showReceivedMessage() {
         return this.memory.getInboxMessage();
+    }
+    chargeBattery() {
+        while (this.battery<100) {
+            this.battery++;
+        }
     }
 }
 
@@ -73,5 +80,7 @@ console.log(samsung.showReceivedMessage());
 
 samsung.composeMessage("Nice to meet you!",nokia);
 console.log(nokia.showReceivedMessage());
+
+
 // console.log(nokia.showEnergy());
 // console.log(samsung.showEnergy());

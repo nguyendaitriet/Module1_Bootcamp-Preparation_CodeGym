@@ -22,11 +22,11 @@
             this.drawCanvas = function () {
                 let rectangle = document.querySelector("#drawRectangle").getContext("2d");
                 rectangle.beginPath();
-                rectangle.rec(50, 50, this.width, this.height);
+                rectangle.rect(50, 50, this.width, this.height);
                 rectangle.stroke();
             }
         }
-        let rec = new Rectangle(50,20);
+        let rec = new Rectangle(100,50);
         rec.drawCanvas();
     </script>
 </body>
