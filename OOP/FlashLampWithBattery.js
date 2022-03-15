@@ -5,7 +5,7 @@ class Battery {
     getEnergy() {
         return this.energy;
     }
-    decreaseEnergy () {
+    decreaseEnergy() {
         if (this.energy >0) {
             this.energy--;
         }
@@ -33,6 +33,7 @@ class FlashLamp {
         this.status = false;
     }
 }
+
 let battery = new Battery();
 battery.setEnergy(100);
 
