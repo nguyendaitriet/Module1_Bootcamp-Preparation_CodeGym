@@ -13,8 +13,9 @@ class Battery {
 }
 
 class FlashLamp {
-    setBattery(battery) {
+    setBattery(battery,status=true) {
         this.battery = battery;
+        this.status = status;
     }
     getBatteryInfo() {
         return this.battery.getEnergy();

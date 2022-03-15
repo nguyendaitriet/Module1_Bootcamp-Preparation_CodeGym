@@ -1,5 +1,7 @@
 class Mobilephone {
-
+    constructor(name) {
+        this.phonename = name;
+    }
     useBattery(battery) {
         return this.battery = battery;
     }
@@ -10,12 +12,14 @@ class Mobilephone {
     showEnergy() {
         return this.battery.getEnergy();
     }
+
     receivedMessage(msg) {
         this.memory.saveInboxMessage(msg);
     }
-    composeMessage(msg,otherphone) {
+    composeMessage(msg, otherphone) {
         this.memory.saveSentMessage(msg);
         otherphone.receivedMessage(msg);
+        this.battery.consumeEnergy();
     }
     showSentMessage() {
         return this.memory.getSentMessage();
@@ -23,10 +27,9 @@ class Mobilephone {
     showReceivedMessage() {
         return this.memory.getInboxMessage();
     }
-    chargeBattery() {
-        while (this.battery<100) {
-            this.battery++;
-        }
+
+    turnOnCharge() {
+        this.battery.chargeBattery();
     }
 }
 
@@ -37,6 +40,16 @@ class Battery {
     }
     getEnergy() {
         return this.energy;
+    }
+
+    consumeEnergy() {
+        this.energy -= 2;
+    }
+
+    chargeBattery() {
+        while (this.energy < 100) {
+            this.energy++;
+        }
     }
 }
 
@@ -62,11 +75,11 @@ class Memory {
     }
 }
 
-let nokia = new Mobilephone();
-let pin1 = new Battery(100);
+let nokia = new Mobilephone('Nokia');
+let pin1 = new Battery(60);
 let mem1 = new Memory(300);
 
-let samsung = new Mobilephone();
+let samsung = new Mobilephone('Samsung');
 let pin2 = new Battery(80);
 let mem2 = new Memory(200);
 
@@ -75,12 +88,15 @@ nokia.useMemory(mem1);
 samsung.useBattery(pin2);
 samsung.useMemory(mem2);
 
-nokia.composeMessage("Hello!",samsung);
+nokia.composeMessage("Hello!", samsung);
 console.log(samsung.showReceivedMessage());
+console.log(nokia.showEnergy());
+nokia.turnOnCharge();
+console.log(nokia.showEnergy());
 
-samsung.composeMessage("Nice to meet you!",nokia);
+samsung.composeMessage("Nice to meet you!", nokia);
 console.log(nokia.showReceivedMessage());
-
+console.log(samsung.showEnergy());
 
 // console.log(nokia.showEnergy());
 // console.log(samsung.showEnergy());

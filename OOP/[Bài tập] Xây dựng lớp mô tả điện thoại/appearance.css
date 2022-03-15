@@ -1,0 +1,14 @@
+fieldset {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20spx;
+}
+#phonebattery1, #phonebattery2 {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: 0;
+    text-align: center;
+    width: 50px;
+    border-radius: 5px;
+}
